@@ -49,7 +49,6 @@ private:
 
 //debouncing switch
 //fire event immediately if changed, then wait some time until allowed to fire again
-
 class DebounceSwitch : public Signal {
 	int pin = 0;
 	bool stableState = false;
