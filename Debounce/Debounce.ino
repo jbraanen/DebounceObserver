@@ -25,14 +25,14 @@ RockAction rockAction;
 
 class PaperAction :public Slot {
 	virtual void signaled(bool state) {
-		servo.write(50);
+		servo.write(167);
 	}
 };
 PaperAction paperAction;
 
 class ScissorAction :public Slot {
 	virtual void signaled(bool state) {
-		servo.write(70);
+		servo.write(53);
 	}
 };
 ScissorAction scissorAction;
@@ -45,11 +45,11 @@ class EmptyAction :public Slot {
 EmptyAction emptyAction;
 
 void setup() {
-	vector<int> ints;
-	ints.push_back(10);
+	//vector<int> ints;
+	//ints.push_back(10);
 
 	Serial.begin(9600);
-	printf("Hello World\n");
+	//printf("Hello World\n");
 
 	pinMode(greenLed.getPin(), OUTPUT);
 	pinMode(yellowLed.getPin(), OUTPUT);
@@ -60,13 +60,13 @@ void setup() {
 	pinMode(sw3.getPin(), INPUT);
 
 	sw1.connect(&greenLed);
-	sw1.connect(&rockAction);
+	sw1.connect(&paperAction);
 
 	sw2.connect(&yellowLed);
-	sw2.connect(&paperAction);
+	sw2.connect(&scissorAction);
 
 	sw3.connect(&redLed);
-	sw3.connect(&scissorAction);
+	sw3.connect(&rockAction);
 
 	servo.attach(2);
 	servo.write(90);
