@@ -118,12 +118,6 @@
     </ClInclude>
     <ClInclude Include="__vm\.Debounce.vsarduino.h" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Components.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

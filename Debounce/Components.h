@@ -1,4 +1,3 @@
-// Components.h
 
 #ifndef _Components_h
 #define _Components_h
@@ -9,16 +8,9 @@
 	#include "WProgram.h"
 #endif
 
-
 #endif
 
-#pragma once
-
-//#ifdef AURDINO
 #include <ArduinoSTL.h>
-//#else
-//#include <vector>
-//#endif
 
 using namespace std;
 
@@ -65,20 +57,14 @@ public:
 	bool state() { return stableState; }
 
 	void update() {
-		//cout << "update" << endl;
 		bool currentState = digitalRead(pin);
 		if (currentState != stableState) {
-			Serial.println("changed state");
 			int now = millis();
 			int delta = now - fireTime;
 			if (delta > minWait) {
-				Serial.println("delta > minWait");
 				stableState = currentState;
 				emit(stableState);
 				fireTime = now;
-			}
-			else {
-				Serial.println("delta < minWait");
 			}
 		}
 	}
