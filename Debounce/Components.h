@@ -19,13 +19,8 @@ public:
 	virtual void signaled(bool state) = 0;
 };
 
-
 class Signal {
 public:
-	Signal() {
-
-	}
-
 	void emit(bool value) {
 		for (auto& slot : slots) {
 			slot->signaled(value);
