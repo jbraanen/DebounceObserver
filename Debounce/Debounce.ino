@@ -12,36 +12,16 @@ LED greenLed(11);
 LED yellowLed(12);
 LED redLed(13);
 
-class RockAction :public Slot {
-public:
-	RockAction() {
-
-	}
-	virtual void signaled(bool state) {
-		servo.write(0);
-	}
-};
+class RockAction :public Slot { virtual void signaled(bool state) { servo.write(0); } };
 RockAction rockAction;
 
-class PaperAction :public Slot {
-	virtual void signaled(bool state) {
-		servo.write(50);
-	}
-};
+class PaperAction :public Slot { virtual void signaled(bool state) { servo.write(50); } };
 PaperAction paperAction;
 
-class ScissorAction :public Slot {
-	virtual void signaled(bool state) {
-		servo.write(70);
-	}
-};
+class ScissorAction :public Slot { virtual void signaled(bool state) { servo.write(70); } };
 ScissorAction scissorAction;
 
-class EmptyAction :public Slot {
-	virtual void signaled(bool state) {
-		servo.write(180);
-	}
-};
+class EmptyAction :public Slot { virtual void signaled(bool state) { servo.write(180); } };
 EmptyAction emptyAction;
 
 void setup() {
